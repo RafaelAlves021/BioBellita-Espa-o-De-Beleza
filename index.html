@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BioBellita Espaço de Beleza | Tranças & Cuidados Terapêuticos em Coelho Neto - RJ</title>
+  
+  <!-- Fontes do Google: Dancing Script (caligrafia elegante/marca) e Quicksand (leitura suave) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #120D0A;
+      --bg-card: #1D1510;
+      --bg-coffee: #2A1B14;
+      --bg-light: #FDF8F2;
+      --bg-cream-card: #F7EEE5;
+      
+      --amber-main: #C87D32;
+      --amber-light: #E5A65E;
+      --amber-warm: #D49B4F;
+      --amber-glow: rgba(229, 166, 94, 0.25);
+      
+      --text-light: #FDF8F2;
+      --text-muted: #D1BEB0;
+      --text-dark: #2A1B14;
+      --text-dark-muted: #5C4336;
+      
+      --border-warm: rgba(229, 166, 94, 0.3);
+      --font-display: 'Dancing Script', cursive;
+      --font-body: 'Quicksand', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .font-brand {
+      font-family: var(--font-display);
+    }
+
+    /* Cantos orgânicos assimétricos inspirados nas asas de borboleta */
+    .butterfly-radius-left {
+      border-radius: 48px 12px 48px 12px;
+    }
+    
+    .butterfly-radius-right {
+      border-radius: 12px 48px 12px 48px;
+    }
+
+    .butterfly-radius-hero {
+      border-radius: 56px 20px 56px 20px;
+    }
+
+    /* Animação suave de flutuação */
+    @keyframes gentleFloat {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-8px) rotate(1deg);
+      }
+    }
+
+    .animate-float {
+      animation: gentleFloat 5s ease-in-out infinite;
+    }
+
+    .animate-float-delayed {
+      animation: gentleFloat 6s ease-in-out 1.5s infinite;
+    }
+
+    /* Brilho pulsante sutil */
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.35; transform: scale(1); }
+      50% { opacity: 0.65; transform: scale(1.04); }
+    }
+
+    .animate-glow {
+      animation: pulseGlow 7s ease-in-out infinite;
+    }
+
+    /* Efeitos de Vidro e Gradientes */
+    .glass-nav {
+      background: rgba(18, 13, 10, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(229, 166, 94, 0.15);
+    }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FDE6C8 0%, #E5A65E 50%, #C87D32 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .card-dark {
+      background: var(--bg-card);
+      border: 1px solid var(--border-warm);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card-dark:hover {
+      transform: translateY(-5px);
+      border-color: var(--amber-light);
+      box-shadow: 0 15px 35px rgba(200, 125, 50, 0.18);
+    }
+
+    /* Botões estilizados */
+    .btn-gold {
+      background: linear-gradient(135deg, var(--amber-light) 0%, var(--amber-main) 100%);
+      color: #120D0A;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 18px rgba(200, 125, 50, 0.35);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-gold:hover {
+      background: linear-gradient(135deg, #FDE6C8 0%, var(--amber-light) 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(229, 166, 94, 0.5);
+      color: #0F0A08;
+    }
+
+    .btn-outline-gold {
+      border: 1.5px solid var(--amber-light);
+      color: var(--amber-light);
+      background: transparent;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-gold:hover {
+      background: rgba(229, 166, 94, 0.12);
+      color: #FFF;
+      border-color: #FFF;
+      transform: translateY(-2px);
+    }
+
+    /* Linha do tempo estilizada */
+    .timeline-step {
+      position: relative;
+    }
+    
+    @media (min-width: 768px) {
+      .timeline-step:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 48px;
+        right: -30%;
+        width: 60%;
+        height: 2px;
+        background: linear-gradient(90deg, var(--amber-light), rgba(229, 166, 94, 0.1));
+        z-index: 1;
+      }
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-fixed {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 99;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-fixed:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+  </style>
+</head>
+<body class="selection:bg-amber-600 selection:text-white">
+
+  <!-- 1. HEADER FIXO -->
+  <header class="glass-nav fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logotipo Circular com Ícone de Borboleta -->
+      <a href="#hero" class="flex items-center gap-3 group text-decoration-none">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-[#1E140F] via-[#2A1B14] to-[#3B2519] border border-[#E5A65E] flex items-center justify-center p-2 shadow-inner group-hover:scale-105 transition-transform duration-300">
+          <!-- Ícone Borboleta SVG Elegante -->
+          <svg class="w-7 h-7 text-[#E5A65E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 12c-2-2.5-4-5-8-4-3 1-3 5 0 6 3 1 6-1 8-2z" />
+            <path d="M12 12c2-2.5 4-5 8-4 3 1 3 5 0 6-3 1-6-1-8-2z" />
+            <path d="M12 12c-1.5 2-3 4-6 4-2.5 0-3-3-1-4.5 1.5-1 4.5-.5 7 .5z" />
+            <path d="M12 12c1.5 2 3 4 6 4 2.5 0 3-3 1-4.5-1.5-1-4.5-.5-7 .5z" />
+            <path d="M12 7v10" />
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-brand text-2xl sm:text-3xl text-[#E5A65E] font-bold leading-none tracking-wide">BioBellita</span>
+          <span class="text-[10px] tracking-widest text-[#D1BEB0] uppercase font-semibold">Espaço de Beleza</span>
+        </div>
+      </a>
+
+      <!-- Menu Desktop -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide text-[#EAD7C5]">
+        <a href="#sobre" class="hover:text-[#E5A65E] transition-colors">Sobre</a>
+        <a href="#transformacao" class="hover:text-[#E5A65E] transition-colors">Metamorfose</a>
+        <a href="#especialidades" class="hover:text-[#E5A65E] transition-colors">Especialidades</a>
+        <a href="#galeria" class="hover:text-[#E5A65E] transition-colors">Galeria</a>
+        <a href="#depoimentos" class="hover:text-[#E5A65E] transition-colors">Avaliações</a>
+        <a href="#localizacao" class="hover:text-[#E5A65E] transition-colors">Localização</a>
+      </nav>
+
+      <!-- Botão Header Desktop -->
+      <div class="hidden md:flex items-center">
+        <a href="https://wa.me/5521977525558" target="_blank" rel="noopener noreferrer" 
+           class="btn-gold px-5 py-2.5 rounded-full text-xs uppercase tracking-wider no-underline">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Agendar no WhatsApp
+        </a>
+      </div>
+
+      <!-- Botão Hambúrguer Mobile -->
+      <button id="menu-btn" class="md:hidden p-2 rounded-lg text-[#E5A65E] hover:bg-[#2A1B14] focus:outline-none" aria-label="Abrir menu de navegação">
+        <svg id="menu-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Menu Dropdown Mobile -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#18100B] border-b border-[#E5A65E]/20 px-6 py-6 space-y-4">
+      <a href="#sobre" class="mobile-nav-link block text-base font-medium text-[#EAD7C5] hover:text-[#E5A65E]">Sobre o Espaço</a>
+      <a href="#transformacao" class="mobile-nav-link block text-base font-medium text-[#EAD7C5] hover:text-[#E5A65E]">Metamorfose & Diferencial</a>
+      <a href="#especialidades" class="mobile-nav-link block text-base font-medium text-[#EAD7C5] hover:text-[#E5A65E]">Especialidades</a>
+      <a href="#outros-servicos" class="mobile-nav-link block text-base font-medium text-[#EAD7C5] hover:text-[#E5A65E]">Demais Serviços</a>
+      <a href="#galeria" class="mobile-nav-link block text-base font-medium text-[#EAD7C5] hover:text-[#E5A65E]">Galeria de Transformações</a>
+      <a href="#depoimentos" class="mobile-nav-link block text-base font-medium text-[#EAD7C5] hover:text-[#E5A65E]">Avaliações de Clientes</a>
+      <a href="#localizacao" class="mobile-nav-link block text-base font-medium text-[#EAD7C5] hover:text-[#E5A65E]">Onde Estamos</a>
+      <div class="pt-4 border-t border-[#3B2519]">
+        <a href="https://wa.me/5521977525558" target="_blank" rel="noopener noreferrer" 
+           class="btn-gold w-full py-3 rounded-full text-center text-sm uppercase tracking-wider block font-bold no-underline">
+          Agendar pelo WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. HERO SECTION -->
+  <section id="hero" class="relative min-h-screen pt-28 pb-16 flex items-center justify-center overflow-hidden">
+    
+    <!-- Elementos Decorativos de Fundo: Asas de Borboleta e Iluminação Orgânica Âmbar -->
+    <div class="absolute inset-0 pointer-events-none z-0">
+      <!-- Brilho âmbar central -->
+      <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-[#C87D32]/15 rounded-full blur-[130px] animate-glow"></div>
+      
+      <!-- Asas de Borboleta Estilizadas em SVG como Marca d'água -->
+      <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] sm:w-[850px] h-auto text-[#E5A65E]/10 animate-float" viewBox="0 0 100 100" fill="currentColor">
+        <path d="M48 50 C30 20, 5 30, 10 55 C12 68, 28 65, 47 52 Z" />
+        <path d="M52 50 C70 20, 95 30, 90 55 C88 68, 72 65, 53 52 Z" />
+        <path d="M48 53 C32 60, 20 80, 32 88 C40 92, 45 75, 49 56 Z" />
+        <path d="M52 53 C68 60, 80 80, 68 88 C60 92, 55 75, 51 56 Z" />
+      </svg>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+      
+      <!-- Badge de Comemoração: 2 Anos de Sucesso -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#2A1B14]/80 border border-[#E5A65E]/40 text-[#E5A65E] text-xs sm:text-sm font-semibold tracking-wide mb-8 shadow-lg backdrop-blur-sm animate-float">
+        <span class="text-base">✨</span>
+        <span>Celebrando 2 Anos Transformando Vidas</span>
+      </div>
+
+      <!-- Frase de Efeito Principal -->
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.15]">
+        Um novo conceito em <br class="hidden sm:inline">
+        <span class="font-brand font-normal text-5xl sm:text-7xl md:text-8xl gold-gradient-text block sm:inline mt-2 sm:mt-0">transformar vidas</span>
+      </h1>
+
+      <!-- Subtítulo e Proposta de Valor -->
+      <p class="text-lg sm:text-2xl text-[#EAD7C5] font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+        Cuidando da sua beleza com amor, acolhimento e a excelência que seu cabelo merece.
+      </p>
+
+      <!-- Chamadas para Ação (CTAs) -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+        <a href="https://wa.me/5521977525558?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20BioBellita%20Espa%C3%A7o%20de%20Beleza." 
+           target="_blank" rel="noopener noreferrer" 
+           class="btn-gold w-full sm:w-auto px-8 py-4 rounded-full text-sm sm:text-base uppercase tracking-wider font-bold no-underline">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a href="#transformacao" class="btn-outline-gold w-full sm:w-auto px-8 py-4 rounded-full text-sm sm:text-base font-semibold tracking-wide no-underline">
+          Conhecer a Experiência
+        </a>
+      </div>
+
+      <!-- Quick Trust Indicators -->
+      <div class="mt-14 pt-8 border-t border-[#3B2519]/70 flex flex-wrap items-center justify-center gap-6 sm:gap-12 text-xs sm:text-sm text-[#D1BEB0]">
+        <div class="flex items-center gap-2">
+          <span class="text-[#E5A65E]">★ ★ ★ ★ ★</span>
+          <span class="font-semibold text-white">4.9 no Google</span> (32 avaliações)
+        </div>
+        <div class="hidden sm:inline text-[#E5A65E]/40">•</div>
+        <div>Especialistas em Tranças & Saúde Capilar</div>
+        <div class="hidden sm:inline text-[#E5A65E]/40">•</div>
+        <div>Coelho Neto - Rio de Janeiro</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. SOBRE O ESPAÇO -->
+  <section id="sobre" class="py-24 bg-[#18110D] relative border-t border-b border-[#2A1B14]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Coluna de Imagem / Colagem com Borda Orgânica -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <!-- Moldura Decorativa estilo Asa -->
+            <div class="absolute -inset-4 bg-gradient-to-tr from-[#C87D32]/30 to-[#E5A65E]/10 butterfly-radius-left blur-lg"></div>
+            
+            <div class="relative butterfly-radius-left overflow-hidden border-2 border-[#E5A65E]/40 shadow-2xl bg-[#2A1B14]">
+              <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=80" 
+                   alt="Ambiente acolhedor do BioBellita Espaço de Beleza" 
+                   class="w-full h-[440px] object-cover object-center transform hover:scale-105 transition-duration-500 duration-500"
+                   loading="lazy">
+              <!-- Overlay gradiente sutil -->
+              <div class="absolute inset-0 bg-gradient-to-t from-[#120D0A]/90 via-transparent to-transparent"></div>
+              
+              <div class="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-[#1D1510]/85 backdrop-blur-md border border-[#E5A65E]/30">
+                <p class="font-brand text-2xl text-[#E5A65E]">Um ambiente feito para acolher</p>
+                <p class="text-xs text-[#EAD7C5] mt-1">Conforto, técnica e afeto desde o primeiro instante.</p>
+              </div>
+            </div>
+
+            <!-- Mini Badge Flutuante -->
+            <div class="absolute -bottom-6 -right-4 bg-[#C87D32] text-[#120D0A] font-bold p-4 butterfly-radius-right shadow-xl text-center animate-float-delayed">
+              <span class="block text-2xl font-black">2+</span>
+              <span class="text-[11px] uppercase tracking-wider leading-none">Anos de Amor</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coluna de Texto e Pilares -->
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#E5A65E] font-semibold mb-3">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            Nossa Essência
+          </div>
+          
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+            Valorizando a sua beleza com <span class="font-brand gold-gradient-text text-4xl sm:text-5xl">atenção & técnica</span>
+          </h2>
+
+          <p class="text-base sm:text-lg text-[#D1BEB0] mb-6 leading-relaxed">
+            O <strong>BioBellita Espaço de Beleza</strong> nasceu em Coelho Neto, Rio de Janeiro, com o propósito de transformar a relação que você tem com a sua autoestima. Acreditamos que cuidar do cabelo é um ato de carinho e reconexão com a própria identidade.
+          </p>
+
+          <p class="text-base sm:text-lg text-[#D1BEB0] mb-8 leading-relaxed">
+            Com profissionais experientes em tranças artísticas e terapias capilares restauradoras, criamos um refúgio acolhedor onde a técnica apurada se une à escuta atenta das suas necessidades.
+          </p>
+
+          <!-- 3 Pilares -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-[#3B2519]">
+            <div class="p-4 rounded-2xl bg-[#221711] border border-[#E5A65E]/20">
+              <div class="w-9 h-9 rounded-full bg-[#E5A65E]/15 text-[#E5A65E] flex items-center justify-center font-bold mb-3">
+                1
+              </div>
+              <h4 class="font-semibold text-white text-base mb-1">Conforto</h4>
+              <p class="text-xs text-[#D1BEB0]">Ambiente pensado para você relaxar e se sentir verdadeiramente em casa.</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-[#221711] border border-[#E5A65E]/20">
+              <div class="w-9 h-9 rounded-full bg-[#E5A65E]/15 text-[#E5A65E] flex items-center justify-center font-bold mb-3">
+                2
+              </div>
+              <h4 class="font-semibold text-white text-base mb-1">Atenção</h4>
+              <p class="text-xs text-[#D1BEB0]">Escuta atenta para entender a história e a saúde dos seus fios.</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-[#221711] border border-[#E5A65E]/20">
+              <div class="w-9 h-9 rounded-full bg-[#E5A65E]/15 text-[#E5A65E] flex items-center justify-center font-bold mb-3">
+                3
+              </div>
+              <h4 class="font-semibold text-white text-base mb-1">Técnica</h4>
+              <p class="text-xs text-[#D1BEB0]">Precisão profissional para acabamentos duradouros e seguros.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. SEÇÃO SUA TRANSFORMAÇÃO (Jornada em 3 etapas) -->
+  <section id="transformacao" class="py-24 bg-[#120D0A] relative overflow-hidden">
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+        <span class="text-xs uppercase tracking-widest text-[#E5A65E] font-semibold">O Caminho da Metamorfose</span>
+        <h2 class="text-3xl sm:text-5xl font-bold text-white mt-2 mb-4">
+          A sua jornada de <span class="font-brand gold-gradient-text text-4xl sm:text-6xl">transformação</span>
+        </h2>
+        <p class="text-[#D1BEB0] text-base sm:text-lg">
+          Assim como a borboleta descobre suas asas, no BioBellita cada detalhe é pensado para despertar a sua melhor versão.
+        </p>
+      </div>
+
+      <!-- Grid de 3 Etapas Conectadas -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-6 relative">
+
+        <!-- Etapa 1: Casulo / Acolhimento -->
+        <div class="timeline-step card-dark p-8 butterfly-radius-left flex flex-col items-center text-center">
+          <div class="w-20 h-20 rounded-full bg-gradient-to-br from-[#2A1B14] to-[#120D0A] border-2 border-[#E5A65E] flex items-center justify-center mb-6 shadow-lg shadow-[#C87D32]/10">
+            <!-- Ícone estilizado de casulo/acolhimento -->
+            <svg class="w-10 h-10 text-[#E5A65E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M12 3a9 9 0 0 0-9 9c0 4.97 4.03 9 9 9s9-4.03 9-9a9 9 0 0 0-9-9z"/>
+              <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5"/>
+              <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <span class="text-xs uppercase tracking-widest text-[#E5A65E] font-bold mb-1">Etapa 01</span>
+          <h3 class="text-2xl font-bold text-white mb-3">Acolhimento</h3>
+          <p class="text-[#D1BEB0] text-sm leading-relaxed">
+            Sua chegada ao salão com chá, conversa e diagnóstico capilar detalhado para compreender a necessidade única do seu couro cabeludo e fios.
+          </p>
+          <div class="mt-6 pt-4 border-t border-[#3B2519] w-full text-xs text-[#E5A65E]">
+            ✦ O primeiro sorriso é a nossa porta de entrada
+          </div>
+        </div>
+
+        <!-- Etapa 2: Cuidado / Metamorfose -->
+        <div class="timeline-step card-dark p-8 butterfly-radius-right flex flex-col items-center text-center md:translate-y-4">
+          <div class="w-20 h-20 rounded-full bg-gradient-to-br from-[#3B2519] to-[#1D1510] border-2 border-[#E5A65E] flex items-center justify-center mb-6 shadow-lg shadow-[#C87D32]/20">
+            <!-- Ícone de cuidado artesanal / mãos protetoras -->
+            <svg class="w-10 h-10 text-[#E5A65E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </div>
+          <span class="text-xs uppercase tracking-widest text-[#E5A65E] font-bold mb-1">Etapa 02</span>
+          <h3 class="text-2xl font-bold text-white mb-3">Cuidado & Técnica</h3>
+          <p class="text-[#D1BEB0] text-sm leading-relaxed">
+            Aplicação de tratamentos terapêuticos e trançagem com respeito à tração correta, unindo produtos adequados e carinho em cada divisão.
+          </p>
+          <div class="mt-6 pt-4 border-t border-[#3B2519] w-full text-xs text-[#E5A65E]">
+            ✦ Arte capilar sem desconforto
+          </div>
+        </div>
+
+        <!-- Etapa 3: Asas / Transformação -->
+        <div class="timeline-step card-dark p-8 butterfly-radius-left flex flex-col items-center text-center">
+          <div class="w-20 h-20 rounded-full bg-gradient-to-br from-[#452B1D] to-[#2A1B14] border-2 border-[#E5A65E] flex items-center justify-center mb-6 shadow-lg shadow-[#C87D32]/30">
+            <!-- Ícone de borboleta de asas abertas -->
+            <svg class="w-11 h-11 text-[#E5A65E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M12 12c-2-3-5-6-9-5-3.5 1-3.5 6 0 7.5 3.5 1.5 7-1 9-2.5z"/>
+              <path d="M12 12c2-3 5-6 9-5 3.5 1 3.5 6 0 7.5-3.5 1.5-7-1-9-2.5z"/>
+              <path d="M12 12c-1.5 2.5-3.5 5.5-7 5.5-3 0-3.5-3.5-1.5-5.5 2-1.5 5.5-.5 8.5 0z"/>
+              <path d="M12 12c1.5 2.5 3.5 5.5 7 5.5 3 0 3.5-3.5 1.5-5.5-2-1.5-5.5-.5-8.5 0z"/>
+              <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <span class="text-xs uppercase tracking-widest text-[#E5A65E] font-bold mb-1">Etapa 03</span>
+          <h3 class="text-2xl font-bold text-white mb-3">Transformação</h3>
+          <p class="text-[#D1BEB0] text-sm leading-relaxed">
+            O momento do espelho: você se enxerga com a autoestima renovada, leveza no olhar e orientações precisas de manutenção em casa.
+          </p>
+          <div class="mt-6 pt-4 border-t border-[#3B2519] w-full text-xs text-[#E5A65E]">
+            ✦ Voando alto com a sua beleza
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA de Transição -->
+      <div class="mt-14 text-center">
+        <a href="https://wa.me/5521977525558?text=Quero%20viver%20a%20minha%20transforma%C3%A7%C3%A3o%20no%20BioBellita!" target="_blank" rel="noopener noreferrer" 
+           class="btn-gold px-8 py-3.5 rounded-full text-sm font-bold uppercase tracking-wider no-underline">
+          Iniciar Minha Transformação
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. ESPECIALIDADES EM DESTAQUE -->
+  <section id="especialidades" class="py-24 bg-[#18110D] border-t border-[#2A1B14]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-widest text-[#E5A65E] font-semibold">Nossos Grandes Diferenciais</span>
+        <h2 class="text-3xl sm:text-5xl font-bold text-white mt-2 mb-4">
+          Especialidades que <span class="font-brand gold-gradient-text text-4xl sm:text-6xl">encantam</span>
+        </h2>
+        <p class="text-[#D1BEB0]">
+          Trabalhos executados com maestria, técnica preservadora da integridade capilar e produtos de alto padrão.
+        </p>
+      </div>
+
+      <div class="space-y-16">
+        
+        <!-- Especialidade 1: Tranças -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center card-dark p-6 sm:p-10 butterfly-radius-hero">
+          <div class="lg:col-span-6 order-2 lg:order-1">
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-[#E5A65E]/20 text-[#E5A65E] mb-3">
+              Destaque Principal
+            </span>
+            <h3 class="text-3xl sm:text-4xl font-bold text-white mb-4">Tranças com Arte & Leveza</h3>
+            <p class="text-[#D1BEB0] text-base leading-relaxed mb-6">
+              As tranças são expressão, ancestralidade e praticidade para o seu cotidiano. No BioBellita, desenvolvemos estilos personalizados garantindo que a tração no couro cabeludo seja gentil e saudável.
+            </p>
+            <ul class="space-y-3 mb-8 text-sm text-[#EAD7C5]">
+              <li class="flex items-center gap-2">
+                <span class="text-[#E5A65E]">✓</span> <strong>Box Braids</strong> (tradicionais, chanel, finas ou grossas)
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-[#E5A65E]">✓</span> <strong>Nagô & Desenhos Personalizados</strong> com acabamento preciso
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-[#E5A65E]">✓</span> <strong>Twists, Goddess Braids e Gypsy Braids</strong> cheias de movimento
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-[#E5A65E]">✓</span> Lavagem e preparação antes do trançamento
+              </li>
+            </ul>
+            <a href="https://wa.me/5521977525558?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20modelos%20e%20valores%20de%20Tran%C3%A7as." 
+               target="_blank" rel="noopener noreferrer" 
+               class="btn-gold px-6 py-3 rounded-full text-xs uppercase tracking-wider font-bold no-underline">
+              Consultar Modelos de Tranças
+            </a>
+          </div>
+          <div class="lg:col-span-6 order-1 lg:order-2">
+            <div class="butterfly-radius-right overflow-hidden border border-[#E5A65E]/40 shadow-xl h-80 sm:h-96">
+              <img src="https://images.unsplash.com/photo-1647891940243-77a6483a152e?auto=format&fit=crop&w=900&q=80" 
+                   alt="Tranças impecáveis realizadas no BioBellita" 
+                   class="w-full h-full object-cover transform hover:scale-105 transition-duration-500 duration-500"
+                   loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Especialidade 2: Cabeleireira Terapêutica -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center card-dark p-6 sm:p-10 butterfly-radius-left">
+          <div class="lg:col-span-6">
+            <div class="butterfly-radius-left overflow-hidden border border-[#E5A65E]/40 shadow-xl h-80 sm:h-96">
+              <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=900&q=80" 
+                   alt="Cuidado capilar terapêutico e bem-estar no BioBellita" 
+                   class="w-full h-full object-cover transform hover:scale-105 transition-duration-500 duration-500"
+                   loading="lazy">
+            </div>
+          </div>
+          <div class="lg:col-span-6">
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-[#E5A65E]/20 text-[#E5A65E] mb-3">
+              Saúde & Bem-Estar
+            </span>
+            <h3 class="text-3xl sm:text-4xl font-bold text-white mb-4">Cabeleireira Terapêutica</h3>
+            <p class="text-[#D1BEB0] text-base leading-relaxed mb-6">
+              Muito além da estética: um olhar holístico para a fisiologia do couro cabeludo e a estrutura da fibra capilar. Tratamos quebra, sensibilidade, ressecamento e perda de vitalidade com protocolos relaxantes e eficientes.
+            </p>
+            <ul class="space-y-3 mb-8 text-sm text-[#EAD7C5]">
+              <li class="flex items-center gap-2">
+                <span class="text-[#E5A65E]">✓</span> <strong>Argiloterapia & Detox Capilar</strong> para equilíbrio da oleosidade
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-[#E5A65E]">✓</span> <strong>Nutrição e Reconstrução Profunda</strong> dos fios danificados
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-[#E5A65E]">✓</span> <strong>Estímulo à circulação</strong> e crescimento saudável com massagem craniana
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-[#E5A65E]">✓</span> Cronograma capilar exclusivo para o pós-salão
+              </li>
+            </ul>
+            <a href="https://wa.me/5521977525558?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20Cuidado%20Terap%C3%AAutico." 
+               target="_blank" rel="noopener noreferrer" 
+               class="btn-gold px-6 py-3 rounded-full text-xs uppercase tracking-wider font-bold no-underline">
+              Agendar Avaliação Terapêutica
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. OUTROS SERVIÇOS -->
+  <section id="outros-servicos" class="py-20 bg-[#120D0A]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs uppercase tracking-widest text-[#E5A65E] font-semibold">Cuidado Completo</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2 mb-3">Outros Serviços do Espaço</h2>
+        <p class="text-[#D1BEB0] text-sm sm:text-base">
+          Tudo o que você precisa para se sentir radiante em um único lugar aconchegante.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Card 1: Designer de Sobrancelhas -->
+        <div class="card-dark p-7 butterfly-radius-right text-center flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 mx-auto rounded-full bg-[#E5A65E]/10 border border-[#E5A65E]/40 flex items-center justify-center text-[#E5A65E] mb-4">
+              <!-- Ícone de Olho / Sobrancelha -->
+              <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-2">Designer de Sobrancelhas</h4>
+            <p class="text-sm text-[#D1BEB0] mb-6">
+              Mapeamento facial harmônico para realçar a força e a doçura do seu olhar. Aplicação com pinça e henna personalizada.
+            </p>
+          </div>
+          <a href="https://wa.me/5521977525558?text=Ol%C3%A1!%20Gostaria%20de%20saber%20sobre%20Design%20de%20Sobrancelhas." 
+             target="_blank" rel="noopener noreferrer" 
+             class="text-xs font-bold text-[#E5A65E] uppercase tracking-wider hover:underline">
+            Consultar Horário →
+          </a>
+        </div>
+
+        <!-- Card 2: Manicure -->
+        <div class="card-dark p-7 butterfly-radius-left text-center flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 mx-auto rounded-full bg-[#E5A65E]/10 border border-[#E5A65E]/40 flex items-center justify-center text-[#E5A65E] mb-4">
+              <!-- Ícone de Esmaltação/Mão -->
+              <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
+                <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"></path>
+                <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"></path>
+                <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path>
+              </svg>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-2">Manicure Delicada</h4>
+            <p class="text-sm text-[#D1BEB0] mb-6">
+              Higiene rigorosa com material esterilizado em autoclave, hidratação profunda das cutículas e esmaltação duradoura.
+            </p>
+          </div>
+          <a href="https://wa.me/5521977525558?text=Ol%C3%A1!%20Gostaria%20de%20saber%20sobre%20Manicure." 
+             target="_blank" rel="noopener noreferrer" 
+             class="text-xs font-bold text-[#E5A65E] uppercase tracking-wider hover:underline">
+            Consultar Horário →
+          </a>
+        </div>
+
+        <!-- Card 3: Pedicure -->
+        <div class="card-dark p-7 butterfly-radius-right text-center flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 mx-auto rounded-full bg-[#E5A65E]/10 border border-[#E5A65E]/40 flex items-center justify-center text-[#E5A65E] mb-4">
+              <!-- Ícone de Spa dos Pés -->
+              <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 11.93 3H7a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2z"></path>
+                <circle cx="12" cy="13" r="3"></circle>
+              </svg>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-2">Pedicure & Spa dos Pés</h4>
+            <p class="text-sm text-[#D1BEB0] mb-6">
+              Descanso e alívio para os pés com esfoliação relaxante, remoção suave de calosidades e cuidado estético impecável.
+            </p>
+          </div>
+          <a href="https://wa.me/5521977525558?text=Ol%C3%A1!%20Gostaria%20de%20saber%20sobre%20Pedicure." 
+             target="_blank" rel="noopener noreferrer" 
+             class="text-xs font-bold text-[#E5A65E] uppercase tracking-wider hover:underline">
+            Consultar Horário →
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. GALERIA DE TRANSFORMAÇÕES -->
+  <section id="galeria" class="py-24 bg-[#18110D] border-t border-[#2A1B14]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-[#E5A65E] font-semibold">Portfólio & Encanto</span>
+          <h2 class="text-3xl sm:text-5xl font-bold text-white mt-1">Galeria de Transformações</h2>
+        </div>
+        <p class="text-sm text-[#D1BEB0] max-w-md mt-4 sm:mt-0">
+          Resultados reais de quem confiou suas madeixas ao carinho e técnica do BioBellita.
+        </p>
+      </div>
+
+      <!-- Grid com cantos assimétricos de asa de borboleta -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        
+        <!-- Foto 1 -->
+        <div class="group relative butterfly-radius-left overflow-hidden h-64 sm:h-80 border border-[#E5A65E]/20">
+          <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=700&q=80" 
+               alt="Trança e estilo impecável" 
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#120D0A]/85 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="text-xs font-semibold text-[#E5A65E]">Box Braids Naturais</span>
+          </div>
+        </div>
+
+        <!-- Foto 2 -->
+        <div class="group relative butterfly-radius-right overflow-hidden h-64 sm:h-80 border border-[#E5A65E]/20">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=80" 
+               alt="Tratamento capilar intensivo" 
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#120D0A]/85 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="text-xs font-semibold text-[#E5A65E]">Terapia Reconstrutora</span>
+          </div>
+        </div>
+
+        <!-- Foto 3 -->
+        <div class="group relative butterfly-radius-left overflow-hidden h-64 sm:h-80 border border-[#E5A65E]/20">
+          <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=700&q=80" 
+               alt="Penteado e finalização afro" 
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#120D0A]/85 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="text-xs font-semibold text-[#E5A65E]">Definição & Brilho</span>
+          </div>
+        </div>
+
+        <!-- Foto 4 -->
+        <div class="group relative butterfly-radius-right overflow-hidden h-64 sm:h-80 border border-[#E5A65E]/20">
+          <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=700&q=80" 
+               alt="Sorriso e nova autoestima" 
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#120D0A]/85 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span class="text-xs font-semibold text-[#E5A65E]">Transformação Completa</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 8. AVALIAÇÕES E DEPOIMENTOS -->
+  <section id="depoimentos" class="py-24 bg-[#120D0A] relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Placa de Reputação Google -->
+      <div class="max-w-2xl mx-auto text-center mb-16 p-8 rounded-3xl bg-[#1E140F] border border-[#E5A65E]/40 shadow-2xl">
+        <div class="flex items-center justify-center gap-2 text-2xl text-[#E5A65E] mb-2">
+          ★★★★★
+        </div>
+        <div class="text-4xl sm:text-5xl font-black text-white mb-2">4,9 <span class="text-2xl text-[#E5A65E] font-normal">/ 5.0</span></div>
+        <p class="text-base text-[#EAD7C5] font-medium">Nota máxima avaliada no Google</p>
+        <span class="inline-block mt-2 text-xs font-bold uppercase tracking-wider text-[#D1BEB0] bg-[#2A1B14] px-4 py-1.5 rounded-full border border-[#E5A65E]/20">
+          Mais de 32 avaliações 5 estrelas em Coelho Neto
+        </span>
+      </div>
+
+      <!-- Depoimentos Reais -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Depoimento 1 -->
+        <div class="card-dark p-8 butterfly-radius-left flex flex-col justify-between">
+          <div>
+            <div class="text-[#E5A65E] text-2xl font-serif mb-4">“</div>
+            <p class="text-base text-[#FDF8F2] italic leading-relaxed mb-6">
+              "Ótimo salão localizado em Coelho Neto, bem próximo à praça."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-[#3B2519]">
+            <div class="w-10 h-10 rounded-full bg-[#E5A65E]/20 flex items-center justify-center text-[#E5A65E] font-bold">
+              C
+            </div>
+            <div>
+              <div class="font-bold text-sm text-white">Cliente Verificada</div>
+              <div class="text-xs text-[#E5A65E]">Avaliação no Google</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Depoimento 2 (Destaque) -->
+        <div class="card-dark p-8 butterfly-radius-right flex flex-col justify-between border-[#E5A65E]">
+          <div>
+            <div class="text-[#E5A65E] text-2xl font-serif mb-4">“</div>
+            <p class="text-base text-[#FDF8F2] italic leading-relaxed mb-6">
+              "As meninas são ótimas, o ambiente é maravilhoso e muito acolhedor."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-[#3B2519]">
+            <div class="w-10 h-10 rounded-full bg-[#E5A65E]/20 flex items-center justify-center text-[#E5A65E] font-bold">
+              M
+            </div>
+            <div>
+              <div class="font-bold text-sm text-white">Cliente Verificada</div>
+              <div class="text-xs text-[#E5A65E]">Avaliação no Google</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Depoimento 3 -->
+        <div class="card-dark p-8 butterfly-radius-left flex flex-col justify-between">
+          <div>
+            <div class="text-[#E5A65E] text-2xl font-serif mb-4">“</div>
+            <p class="text-base text-[#FDF8F2] italic leading-relaxed mb-6">
+              "O lugar onde o sorriso é o primeiro material de trabalho."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-[#3B2519]">
+            <div class="w-10 h-10 rounded-full bg-[#E5A65E]/20 flex items-center justify-center text-[#E5A65E] font-bold">
+              A
+            </div>
+            <div>
+              <div class="font-bold text-sm text-white">Cliente Verificada</div>
+              <div class="text-xs text-[#E5A65E]">Avaliação no Google</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 9. LOCALIZAÇÃO -->
+  <section id="localizacao" class="py-24 bg-[#18110D] border-t border-[#2A1B14]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Detalhes de Endereço & Horários -->
+        <div class="lg:col-span-5">
+          <span class="text-xs uppercase tracking-widest text-[#E5A65E] font-semibold">Como Chegar</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mt-1 mb-6">Venha nos Visitar</h2>
+          
+          <div class="space-y-6 text-[#EAD7C5]">
+            <!-- Endereço -->
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-[#2A1B14] border border-[#E5A65E]/30 flex items-center justify-center text-[#E5A65E] shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              </div>
+              <div>
+                <strong class="block text-white text-base">Endereço</strong>
+                <p class="text-sm text-[#D1BEB0] mt-0.5">Av. dos Italianos, 1450 - Lj 2<br>Coelho Neto, Rio de Janeiro - RJ<br>CEP 21510-105</p>
+                <span class="inline-block mt-1 text-xs text-[#E5A65E]">Ponto de referência: Próximo à praça de Coelho Neto</span>
+              </div>
+            </div>
+
+            <!-- Horários de Funcionamento -->
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-[#2A1B14] border border-[#E5A65E]/30 flex items-center justify-center text-[#E5A65E] shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <div>
+                <strong class="block text-white text-base">Horário de Funcionamento</strong>
+                <p class="text-sm text-[#D1BEB0] mt-0.5">Terça a Sábado: <strong>09h às 18h</strong><br>Domingos e Segundas: Fechado</p>
+              </div>
+            </div>
+
+            <!-- Telefone / WhatsApp -->
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-[#2A1B14] border border-[#E5A65E]/30 flex items-center justify-center text-[#E5A65E] shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              </div>
+              <div>
+                <strong class="block text-white text-base">Contato Direto</strong>
+                <p class="text-sm text-[#D1BEB0] mt-0.5">(21) 97752-5558</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <a href="https://maps.google.com/?q=Av.+dos+Italianos,+1450+-+Lj+2+-+Coelho+Neto,+Rio+de+Janeiro+-+RJ,+21510-105" 
+               target="_blank" rel="noopener noreferrer" 
+               class="btn-outline-gold inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs uppercase tracking-wider font-bold no-underline">
+              Abrir no GPS / Google Maps
+            </a>
+          </div>
+        </div>
+
+        <!-- Google Maps Embed Funcional -->
+        <div class="lg:col-span-7">
+          <div class="butterfly-radius-hero overflow-hidden border-2 border-[#E5A65E]/40 shadow-2xl h-[380px] bg-[#1E140F]">
+            <iframe 
+              title="Mapa de Localização BioBellita Espaço de Beleza"
+              src="https://maps.google.com/maps?q=Av.+dos+Italianos,+1450+-+Coelho+Neto,+Rio+de+Janeiro+-+RJ,+21510-105&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+              width="100%" 
+              height="100%" 
+              style="border:0; filter: contrast(1.05) opacity(0.92);" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 10. CONTATO E AGENDAMENTO (Formulário Integrado ao WhatsApp) -->
+  <section id="contato" class="py-24 bg-[#120D0A] relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="card-dark p-8 sm:p-12 butterfly-radius-hero border-[#E5A65E]/50">
+        
+        <div class="text-center max-w-xl mx-auto mb-10">
+          <span class="text-xs uppercase tracking-widest text-[#E5A65E] font-semibold">Agendamento Fácil</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2 mb-3">
+            Garanta seu Momento de <span class="font-brand gold-gradient-text text-4xl sm:text-5xl">Cuidado</span>
+          </h2>
+          <p class="text-sm text-[#D1BEB0]">
+            Preencha os campos abaixo para gerar sua mensagem personalizada e falar diretamente conosco no WhatsApp oficial.
+          </p>
+        </div>
+
+        <form id="appointment-form" class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            
+            <!-- Nome -->
+            <div>
+              <label for="form-name" class="block text-xs font-semibold text-[#EAD7C5] uppercase tracking-wider mb-2">Seu Nome Completo</label>
+              <input type="text" id="form-name" required placeholder="Como podemos te chamar?"
+                     class="w-full bg-[#18100B] border border-[#3B2519] focus:border-[#E5A65E] rounded-xl px-4 py-3 text-sm text-white placeholder-stone-500 focus:outline-none transition-colors">
+            </div>
+
+            <!-- Telefone -->
+            <div>
+              <label for="form-phone" class="block text-xs font-semibold text-[#EAD7C5] uppercase tracking-wider mb-2">WhatsApp / Telefone</label>
+              <input type="tel" id="form-phone" required placeholder="(21) 90000-0000"
+                     class="w-full bg-[#18100B] border border-[#3B2519] focus:border-[#E5A65E] rounded-xl px-4 py-3 text-sm text-white placeholder-stone-500 focus:outline-none transition-colors">
+            </div>
+
+          </div>
+
+          <!-- Serviço de Interesse -->
+          <div>
+            <label for="form-service" class="block text-xs font-semibold text-[#EAD7C5] uppercase tracking-wider mb-2">Serviço Desejado</label>
+            <select id="form-service" required
+                    class="w-full bg-[#18100B] border border-[#3B2519] focus:border-[#E5A65E] rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-colors">
+              <option value="" disabled selected>Selecione a experiência que procura</option>
+              <option value="Tranças (Box Braids / Nagô / Twists)">✨ Tranças (Box Braids / Nagô / Twists)</option>
+              <option value="Cabeleireira Terapêutica (Cuidado e Bem-Estar)">🌿 Cabeleireira Terapêutica (Tratamentos & Recuperação)</option>
+              <option value="Designer de Sobrancelhas">👁️ Designer de Sobrancelhas</option>
+              <option value="Manicure">💅 Manicure</option>
+              <option value="Pedicure / Spa dos Pés">👣 Pedicure / Spa dos Pés</option>
+              <option value="Combo Completo de Cuidados">👑 Combo Completo de Cuidados</option>
+            </select>
+          </div>
+
+          <!-- Mensagem / Preferência de Dia -->
+          <div>
+            <label for="form-message" class="block text-xs font-semibold text-[#EAD7C5] uppercase tracking-wider mb-2">Preferência de Data ou Dúvidas</label>
+            <textarea id="form-message" rows="3" placeholder="Ex: Gostaria de agendar para uma sexta-feira pela manhã..."
+                      class="w-full bg-[#18100B] border border-[#3B2519] focus:border-[#E5A65E] rounded-xl px-4 py-3 text-sm text-white placeholder-stone-500 focus:outline-none transition-colors"></textarea>
+          </div>
+
+          <!-- Botão de Envio via WhatsApp -->
+          <div>
+            <button type="submit" 
+                    class="btn-gold w-full py-4 rounded-xl text-sm font-bold uppercase tracking-wider cursor-pointer">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              Enviar Agendamento via WhatsApp
+            </button>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 11. FOOTER -->
+  <footer class="bg-[#0B0705] border-t border-[#2A1B14] py-14 text-[#D1BEB0] text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        
+        <!-- Logo e Conceito -->
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full bg-[#2A1B14] border border-[#E5A65E] flex items-center justify-center">
+              <svg class="w-5 h-5 text-[#E5A65E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 12c-2-2.5-4-5-8-4-3 1-3 5 0 6 3 1 6-1 8-2z" />
+                <path d="M12 12c2-2.5 4-5 8-4 3 1 3 5 0 6-3 1-6-1-8-2z" />
+                <path d="M12 7v10" />
+              </svg>
+            </div>
+            <span class="font-brand text-2xl text-[#E5A65E] font-bold">BioBellita</span>
+          </div>
+          <p class="text-xs sm:text-sm text-[#A89487] max-w-sm mb-4 leading-relaxed">
+            "Um novo conceito em transformar vidas. Cuidando da sua beleza com amor." Espaço de beleza especializado em tranças e saúde capilar em Coelho Neto, Rio de Janeiro.
+          </p>
+          <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-[#2A1B14] border border-[#E5A65E]/30 text-[#E5A65E]">
+            ✨ 2 Anos Transformando Vidas
+          </span>
+        </div>
+
+        <!-- Links Rápidos -->
+        <div>
+          <h5 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Navegação</h5>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#sobre" class="hover:text-[#E5A65E] transition-colors">Sobre o Espaço</a></li>
+            <li><a href="#transformacao" class="hover:text-[#E5A65E] transition-colors">Metamorfose Capilar</a></li>
+            <li><a href="#especialidades" class="hover:text-[#E5A65E] transition-colors">Tranças & Terapia</a></li>
+            <li><a href="#galeria" class="hover:text-[#E5A65E] transition-colors">Galeria de Clientes</a></li>
+            <li><a href="#depoimentos" class="hover:text-[#E5A65E] transition-colors">Avaliações no Google</a></li>
+          </ul>
+        </div>
+
+        <!-- Contato Rápido -->
+        <div>
+          <h5 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Atendimento</h5>
+          <p class="text-xs text-[#A89487] mb-2">Av. dos Italianos, 1450 - Lj 2<br>Coelho Neto, RJ</p>
+          <p class="text-xs text-[#E5A65E] font-semibold mb-4">WhatsApp: (21) 97752-5558</p>
+          <a href="https://wa.me/5521977525558" target="_blank" rel="noopener noreferrer" 
+             class="btn-gold px-4 py-2 rounded-full text-xs font-bold no-underline inline-block">
+            Conversar Agora
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Linha Final de Direitos -->
+      <div class="pt-8 border-t border-[#1F140D] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#806B5F]">
+        <p>© 2026 BioBellita Espaço de Beleza. Todos os direitos reservados.</p>
+        <p>Feito com carinho para valorizar a sua verdadeira essência.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Botão Flutuante do WhatsApp -->
+  <a href="https://wa.me/5521977525558?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20BioBellita." 
+     target="_blank" rel="noopener noreferrer" 
+     class="whatsapp-fixed w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl"
+     aria-label="Falar no WhatsApp agora">
+    <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+  </a>
+
+  <!-- Tailwind CDN para utilitários responsivos de Grid e Flexbox -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      
+      // 1. Menu Mobile Toggle
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', function () {
+          mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fecha o menu móvel ao clicar em qualquer link interno
+        mobileNavLinks.forEach(link => {
+          link.addEventListener('click', function () {
+            mobileMenu.classList.add('hidden');
+          });
+        });
+      }
+
+      // 2. Formulário Interativo que constrói a mensagem formatada para o WhatsApp
+      const form = document.getElementById('appointment-form');
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById('form-name').value.trim();
+          const phone = document.getElementById('form-phone').value.trim();
+          const service = document.getElementById('form-service').value;
+          const message = document.getElementById('form-message').value.trim();
+
+          // Cria mensagem estruturada
+          let text = `*Olá, BioBellita Espaço de Beleza!*\n`;
+          text += `Gostaria de solicitar um agendamento:\n\n`;
+          text += `👤 *Nome:* ${name}\n`;
+          text += `📱 *Telefone:* ${phone}\n`;
+          text += `✨ *Serviço de Interesse:* ${service}\n`;
+          
+          if (message) {
+            text += `📝 *Observação / Preferência de horário:* ${message}\n`;
+          }
+
+          text += `\nAguardo confirmação de disponibilidade. Obrigado!`;
+
+          // URL final de redirecionamento para o WhatsApp oficial
+          const encodedMessage = encodeURIComponent(text);
+          const whatsappUrl = `https://wa.me/5521977525558?text=${encodedMessage}`;
+
+          // Abre em nova aba
+          window.open(whatsappUrl, '_blank');
+        });
+      }
+
+    });
+  </script>
+</body>
+</html>
